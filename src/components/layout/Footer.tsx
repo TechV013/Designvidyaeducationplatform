@@ -92,7 +92,7 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-6 text-sm opacity-70">
               <Link href="/contact" className="hover:underline">Contact Us</Link>
               <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-              <Link href="/terms" className="hover:underline">Terms of Use</Link>
+              <Link href="/terms" className="hover:underline">Terms and Conditions</Link>
             <span>&copy; 2026 All rights reserved.</span>
           </div>
         </div>

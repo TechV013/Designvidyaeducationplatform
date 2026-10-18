@@ -391,7 +391,7 @@ export default function RegisterPage() {
                   rel="noopener noreferrer"
                   className="font-bold text-[#1e2a5a] hover:text-primary hover:underline"
                 >
-                  Terms of Service
+                  Terms and Conditions
                 </Link>{" "}
                 and{" "}
                 <Link

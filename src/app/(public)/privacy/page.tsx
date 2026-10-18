@@ -183,7 +183,7 @@ export default function PrivacyPage() {
             live classes and events, improve the Website and course content, understand user
             preferences, develop new Services, communicate account and course updates, provide
             customer support, send permitted promotional communications, detect fraud, prevent
-            unauthorized access, enforce our Terms of Use, and comply with applicable legal or
+            unauthorized access, enforce our Terms and Conditions, and comply with applicable legal or
             regulatory requirements.
           </p>
         </section>
@@ -425,7 +425,7 @@ export default function PrivacyPage() {
           <p className="text-sm text-muted leading-relaxed text-justify">
             This Privacy Policy shall be governed by and interpreted in accordance with the laws
             applicable in India. Any dispute relating to this Privacy Policy or the Services shall
-            be subject to the applicable jurisdiction of the courts specified in the Terms of Use
+            be subject to the applicable jurisdiction of the courts specified in the Terms and Conditions
             of Design Vidya, subject to applicable law.
           </p>
         </section>
