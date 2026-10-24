@@ -5,6 +5,7 @@ import SessionProvider from "@/components/auth/SessionProvider";
 import SessionGuard from "@/components/auth/SessionGuard";
 import AuthNotificationManager from "@/components/auth/AuthNotificationManager";
 import { ToastProvider } from "@/components/ui/Toast";
+import MetaPixel from "@/components/analytics/MetaPixel";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <SessionProvider>
           <ToastProvider>
+            <MetaPixel pixelId={process.env.META_PIXEL_ID || ""} />
             <SessionGuard />
             <AuthNotificationManager />
             {children}
