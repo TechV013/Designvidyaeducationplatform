@@ -5,7 +5,6 @@ import SessionProvider from "@/components/auth/SessionProvider";
 import SessionGuard from "@/components/auth/SessionGuard";
 import AuthNotificationManager from "@/components/auth/AuthNotificationManager";
 import { ToastProvider } from "@/components/ui/Toast";
-import MetaPixel from "@/components/analytics/MetaPixel";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -64,10 +63,38 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakarta.className} h-full antialiased`}
     >
+      <head>
+        {/* Meta Pixel Code */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${process.env.META_PIXEL_ID || "2378602222953460"}');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${process.env.META_PIXEL_ID || "2378602222953460"}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+        {/* End Meta Pixel Code */}
+      </head>
       <body className="min-h-full flex flex-col">
         <SessionProvider>
           <ToastProvider>
-            <MetaPixel pixelId={process.env.META_PIXEL_ID || ""} />
             <SessionGuard />
             <AuthNotificationManager />
             {children}
